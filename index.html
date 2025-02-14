@@ -1,62 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git Commands Guide</title>
     <link rel="stylesheet" href="./styles.css">
-  </head>
-  <body>
-    <h1>Learning basic commands</h1>
+</head>
+<body>
 
-    <h2>git clone command</h2>
-    <h3>
-      git clone command is used for cloning a repository from a remote server to
-      the local machine.
-    </h3>
-    <br />
-    <h2>git status command</h2>
-    <h3>
-      status are of many types <br />
-      <li>untracked</li>
-      <li>modified</li>
-      <li>staged</li>
-      <li>unmodified</li>
-      <br />
-    </h2>
+    <nav>
+        <a href="../LocalRepo/local.html">Local Repository</a>
+    </nav>
 
-    <h3>
-      <ol>
-        modified (M)- changed the content in the file
-      </ol>
-      <ol>
-        untracked (U) - files are yet to be added to git ( not tracked by git )
-      </ol>
-      <ol>
-        staged(A) - files are added to the staging area ( ready to be committed )
-      </ol>
+    <header>
+        <h1>Git Commands Guide</h1>
+    </header>
 
-      <ol>
-        commit - files are added and commited to the repository -unchanaged
-        (unmodified)
-      </ol>
-    </h3>
+    <section>
+        <h2>Git Configuration</h2>
+        <p><code>git config --global user.name "Your GitHub Username"</code></p>
+        <p><code>git config --global user.email "your-email@example.com"</code></p>
+        <p>These commands set up your Git global username and email, used for commit tracking.</p>
 
-    <h1>Git Add and commmit</h1>
+        <h3>Viewing Global Configuration</h3>
+        <p><code>git config --global user.name</code> - Displays your GitHub username</p>
+        <p><code>git config --global user.email</code> - Displays your GitHub email</p>
+        <p><code>git config --global --list</code> - Displays both username and email</p>
 
-  <i>git add {filename}</i>
-   <h3> adds new or changed files in your working directory to the git </h3>
+        <h3>Local Configuration</h3>
+        <p><code>git config user.name "Local Username"</code></p>
+        <p><code>git config user.email "local-email@example.com"</code></p>
+        <p>If no scope (<code>--global</code> or <code>--local</code>) is mentioned, Git applies changes to the local repository by default.</p>
 
-   <i>git add .</i></h2>
-   <h3>Adds all the files and folder in the respecitve directory </h3>
-   <h3> Here the files are in Staged area</h3>
+        <h3>Viewing Local Configuration</h3>
+        <p><code>git config --local --list</code> - Lists the local username and email settings</p>
+    </section>
 
-   <i> git commit -m " some message"</i>
-  <h3>it is the record of change</h3>
-  <h3>m stands for message  and always it's better to add some meaning message </h3>
+    <section>
+        <h2>Git Clone Command</h2>
+        <p><code>git clone &lt;repo-link&gt;</code></p>
+        <p>Clones a repository from a remote server (e.g., GitHub) to your local machine.</p>
+    </section>
 
- <h2>Git push command</h2>
- <h3>git pull </h3>
+    <section>
+        <h2>Viewing Hidden Git Files</h2>
+        <p>To view hidden files, including the <code>.git</code> directory:</p>
+        <ul>
+            <li><code>ls -a</code> (Linux/macOS)</li>
+            <li><code>Get-ChildItem -Force</code> (Windows PowerShell)</li>
+        </ul>
+    </section>
 
-  </body>
+    <section>
+        <h2>Git Status Command</h2>
+        <p>Displays the current state of your working directory and staging area.</p>
+        <ul>
+            <li><b>Untracked (U):</b> New file, not yet staged.</li>
+            <li><b>Modified (M):</b> File has been changed but not staged.</li>
+            <li><b>Staged (A):</b> File is added to the staging area, ready for commit.</li>
+            <li><b>Committed:</b> File is stored in the repository.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Git Add and Commit</h2>
+        <p><code>git add filename</code> - Adds a specific file to the staging area.</p>
+        <p><code>git add .</code> - Adds all modified and untracked files in the directory.</p>
+
+        <p><code>git commit -m "Meaningful commit message"</code></p>
+        <p>Commits the staged changes with a descriptive message.</p>
+        <p><b>Good commit messages should be:</b></p>
+        <ul>
+            <li>Concise and meaningful</li>
+            <li>Descriptive of the changes made</li>
+            <li>Consistent with a proper format</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Git Push Command</h2>
+        <p><code>git push origin main</code></p>
+        <ul>
+            <li><b>Push:</b> Sends committed changes to a remote repository.</li>
+            <li><b>Origin:</b> The default name for the remote repository.</li>
+            <li><b>Main:</b> The primary branch where changes are pushed.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Git Branch Workflow (Graphical Representation)</h2>
+        <pre>
+Feature-Branch
+│
+├── Modified & Untracked Files (Before Staging)
+│   ├── M  existingFile.txt   (Modified)
+│   ├── U  newFile.txt        (Untracked)
+│
+├── Staged Files (After git add)
+│   ├── A  existingFile.txt   (Staged)
+│   ├── A  newFile.txt        (Staged)
+│
+└── Committed Files (After git commit)
+    ├── C  existingFile.txt   (Committed)
+    ├── C  newFile.txt        (Committed)
+        </pre>
+        <p><b>Legend:</b></p>
+        <ul>
+            <li><b>M</b> → Modified (Tracked but changed)</li>
+            <li><b>U</b> → Untracked (New file, not yet in Git)</li>
+            <li><b>A</b> → Added (Staged and ready to commit)</li>
+            <li><b>C</b> → Committed (Saved in the repository)</li>
+        </ul>
+    </section>
+
+</body>
 </html>
