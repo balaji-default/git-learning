@@ -308,25 +308,26 @@ Feature-Branch
     </section>
 
     <section>
-        <h2>Git Branch Management</h2>
-      
-        <h3>git branch</h3>
-        <p><b>Description:</b> Lists all local branches.</p>
-        <pre><code>git branch</code></pre>
-      
-        <h3>git branch -a</h3>
-        <p><b>Description:</b> Lists both local and remote branches.</p>
-        <pre><code>git branch -a</code></pre>
-      
-        <h3>git branch -M main</h3>
-        <p><b>Description:</b> Renames the current branch to <code>main</code>. (Already explained in the previous section.)</p>
-      
-        <h3>git checkout</h3>
-        <p><b>Description:</b> Switches to a different branch.</p>
-        <pre><code>git checkout branch-name</code></pre>
-        
-      </section>
-    
+      <h2>Git Branch Management</h2>
+
+      <h3>git branch</h3>
+      <p><b>Description:</b> Lists all local branches.</p>
+      <pre><code>git branch</code></pre>
+
+      <h3>git branch -a</h3>
+      <p><b>Description:</b> Lists both local and remote branches.</p>
+      <pre><code>git branch -a</code></pre>
+
+      <h3>git branch -M main</h3>
+      <p>
+        <b>Description:</b> Renames the current branch to <code>main</code>.
+        (Already explained in the previous section.)
+      </p>
+
+      <h3>git checkout</h3>
+      <p><b>Description:</b> Switches to a different branch.</p>
+      <pre><code>git checkout branch-name</code></pre>
+    </section>
 
     <section>
       <h2>Creating a New Branch</h2>
@@ -371,74 +372,87 @@ Feature-Branch
       </p>
     </section>
 
-
     <section>
-        <h2>Fetching and Merging Changes from Main</h2>
-        
-        <p>
-          When working in a feature branch, it's important to stay up to date with the latest changes from the <code>main</code> branch. 
-          This prevents conflicts and ensures your branch has the most recent code before pushing your changes.
-        </p>
-      
-        <h3>1️⃣ git fetch origin main</h3>
-        <p>
-          <b>Description:</b> Fetches the latest changes from the remote <code>main</code> branch but does NOT apply them yet.
-        </p>
-        <p><b>Usage:</b></p>
-        <pre><code>git fetch origin main</code></pre>
-        <p>
-          This downloads the latest updates from the remote repository without modifying your current branch.
-        </p>
-        <p><b>Example Output:</b></p>
-        <pre><code>
+      <h2>Fetching and Merging Changes from Main</h2>
+
+      <p>
+        When working in a feature branch, it's important to stay up to date with
+        the latest changes from the <code>main</code> branch. This prevents
+        conflicts and ensures your branch has the most recent code before
+        pushing your changes.
+      </p>
+
+      <h3>1️⃣ git fetch origin main</h3>
+      <p>
+        <b>Description:</b> Fetches the latest changes from the remote
+        <code>main</code> branch but does NOT apply them yet.
+      </p>
+      <p><b>Usage:</b></p>
+      <pre><code>git fetch origin main</code></pre>
+      <p>
+        This downloads the latest updates from the remote repository without
+        modifying your current branch.
+      </p>
+      <p><b>Example Output:</b></p>
+      <pre><code>
       From github.com:user/repo
        * branch            main     -> FETCH_HEAD
         </code></pre>
-        <p>
-          At this stage, your local branch does not yet contain the updates from <code>main</code>. You need to merge them.
-        </p>
-      
-        <h3>2️⃣ git merge main</h3>
-        <p>
-          <b>Description:</b> Merges the fetched updates from <code>main</code> into your current branch.
-        </p>
-        <p><b>Usage:</b></p>
-        <pre><code>git merge main</code></pre>
-        <p>
-          If there are no conflicts, the changes are merged automatically. If there are conflicts, Git will ask you to resolve them.
-        </p>
-      
-        <h3>🔹 Summary of Fetch vs Merge</h3>
-        <table border="1" cellpadding="10">
-          <tr>
-            <th>Command</th>
-            <th>Description</th>
-          </tr>
-          <tr>
-            <td><code>git fetch origin main</code></td>
-            <td>Downloads the latest changes from remote <code>main</code> but does not merge them.</td>
-          </tr>
-          <tr>
-            <td><code>git merge main</code></td>
-            <td>Merges the fetched changes into your current branch.</td>
-          </tr>
-        </table>
-      
-        <h3>🔹 When to Use git fetch Instead of git pull?</h3>
-        <ul>
-          <li>Use <code>git fetch origin main</code> when you want to <b>see the updates first</b> before merging.</li>
-          <li>Use <code>git pull origin main</code> if you want to fetch + merge in one step (but with less control).</li>
-        </ul>
-      
-        <p>
-          <b>Final Thoughts:</b> <br>
-          ✅ <code>git fetch</code> lets you review changes before merging. <br>
-          ✅ <code>git merge</code> applies the changes to your branch. <br>
-          ✅ This approach avoids unexpected conflicts when working with multiple team members.
-        </p>
-      </section>
-      
+      <p>
+        At this stage, your local branch does not yet contain the updates from
+        <code>main</code>. You need to merge them.
+      </p>
 
+      <h3>2️⃣ git merge main</h3>
+      <p>
+        <b>Description:</b> Merges the fetched updates from
+        <code>main</code> into your current branch.
+      </p>
+      <p><b>Usage:</b></p>
+      <pre><code>git merge main</code></pre>
+      <p>
+        If there are no conflicts, the changes are merged automatically. If
+        there are conflicts, Git will ask you to resolve them.
+      </p>
 
+      <h3>🔹 Summary of Fetch vs Merge</h3>
+      <table border="1" cellpadding="10">
+        <tr>
+          <th>Command</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          <td><code>git fetch origin main</code></td>
+          <td>
+            Downloads the latest changes from remote <code>main</code> but does
+            not merge them.
+          </td>
+        </tr>
+        <tr>
+          <td><code>git merge main</code></td>
+          <td>Merges the fetched changes into your current branch.</td>
+        </tr>
+      </table>
+
+      <h3>🔹 When to Use git fetch Instead of git pull?</h3>
+      <ul>
+        <li>
+          Use <code>git fetch origin main</code> when you want to
+          <b>see the updates first</b> before merging.
+        </li>
+        <li>
+          Use <code>git pull origin main</code> if you want to fetch + merge in
+          one step (but with less control).
+        </li>
+      </ul>
+
+      <p>
+        <b>Final Thoughts:</b> <br />
+        ✅ <code>git fetch</code> lets you review changes before merging. <br />
+        ✅ <code>git merge</code> applies the changes to your branch. <br />
+        ✅ This approach avoids unexpected conflicts when working with multiple
+        team members.
+      </p>
+    </section>
   </body>
 </html>
