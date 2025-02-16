@@ -4,8 +4,6 @@ This guide provides a comprehensive overview of essential Git commands and workf
 
 ## Table of Contents
 
-Git Commands Guide
-
 --- Table of Contents ---
 1. Git Configuration  
 2. Basic Workflow  
@@ -17,54 +15,128 @@ Git Commands Guide
 8. Best Practices  
 -------------------------
 
---- 1. Git Configuration ---
-1. Set global username: git config --global user.name "Your GitHub Username"  
-2. Set global email: git config --global user.email "your-email@example.com"  
-3. View global username: git config --global user.name  
-4. View global email: git config --global user.email  
-5. List global configs: git config --global --list  
-6. Set local username: git config user.name "Local Username"  
-7. Set local email: git config user.email "local-email@example.com"  
-8. List local configs: git config --local --list  
+## 1. Git Configuration
 
---- 2. Basic Workflow ---
-9. Check Git version: git --version  
-10. Initialize repo: git init  
-11. Stage all files: git add .  
-12. Commit changes: git commit -m "Initial commit"  
-13. Link to remote: git remote add origin https://github.com/your-username/repo.git  
-14. Rename branch to main: git branch -M main  
-15. Push to remote: git push -u origin main  
+```bash
+git config --global user.name "Your GitHub Username"
+```
+```bash
+git config --global user.email "your-email@example.com"
+```
+```bash
+git config --global user.name  # View global username
+```
+```bash
+git config --global user.email  # View global email
+```
+```bash
+git config --global --list  # List global configs
+```
+```bash
+git config user.name "Local Username"
+```
+```bash
+git config user.email "local-email@example.com"
+```
+```bash
+git config --local --list  # List local configs
+```
 
---- 3. Cloning Repositories ---
-16. Clone a repo: git clone https://github.com/your-username/repo.git  
-17. View hidden files (Linux/macOS): ls -a  
-18. View hidden files (Windows): Get-ChildItem -Force  
+## 2. Basic Workflow
 
---- 4. Branch Management ---
-19. List branches: git branch  
-20. Create branch: git branch feature1  
-21. Switch to branch: git checkout feature1  
-22. Create + switch (legacy): git checkout -b feature2  
-23. Create + switch (modern): git switch -c feature3  
+```bash
+git --version  # Check Git version
+```
+```bash
+git init  # Initialize repo
+```
+```bash
+git add .  # Stage all files
+```
+```bash
+git commit -m "Initial commit"  # Commit changes
+```
+```bash
+git remote add origin https://github.com/your-username/repo.git  # Link to remote
+```
+```bash
+git branch -M main  # Rename branch to main
+```
+```bash
+git push -u origin main  # Push to remote
+```
 
---- 5. Merging & Syncing ---
-24. Compare changes with main: git diff main  
-25. Fetch updates: git fetch origin main  
-26. Merge changes: git merge main  
-27. Pull updates: git pull origin main  
-28. Rebase onto main: git rebase main  
+## 3. Cloning Repositories
 
---- 6. Remote Operations ---
-29. Push feature branch: git push origin feature1  
-30. Delete remote branch: git push origin --delete feature1  
+```bash
+git clone https://github.com/your-username/repo.git  # Clone a repo
+```
+```bash
+ls -a  # View hidden files (Linux/macOS)
+```
+```bash
+Get-ChildItem -Force  # View hidden files (Windows)
+```
 
---- 7. Cleanup & Maintenance ---
-31. Delete local branch: git branch -d feature1  
-32. Force-delete branch: git branch -D feature3  
-33. Prune stale branches: git fetch -p  
+## 4. Branch Management
 
---- 8. Best Practices ---
+```bash
+git branch  # List branches
+```
+```bash
+git branch feature1  # Create branch
+```
+```bash
+git checkout feature1  # Switch to branch
+```
+```bash
+git checkout -b feature2  # Create + switch (legacy)
+```
+```bash
+git switch -c feature3  # Create + switch (modern)
+```
+
+## 5. Merging & Syncing
+
+```bash
+git diff main  # Compare changes with main
+```
+```bash
+git fetch origin main  # Fetch updates
+```
+```bash
+git merge main  # Merge changes
+```
+```bash
+git pull origin main  # Pull updates
+```
+```bash
+git rebase main  # Rebase onto main
+```
+
+## 6. Remote Operations
+
+```bash
+git push origin feature1  # Push feature branch
+```
+```bash
+git push origin --delete feature1  # Delete remote branch
+```
+
+## 7. Cleanup & Maintenance
+
+```bash
+git branch -d feature1  # Delete local branch
+```
+```bash
+git branch -D feature3  # Force-delete branch
+```
+```bash
+git fetch -p  # Prune stale branches
+```
+
+## 8. Best Practices
+
 - Always use feature branches.  
 - Create Pull Requests (PRs) on GitHub.  
 - Never push directly to `main`.  
