@@ -375,6 +375,23 @@ Feature-Branch
     </section>
 
     <section>
+      <h2>Merging Branches</h2>
+
+      <h3>1️⃣ Comparing Changes Between Branches</h3>
+      <p>
+        <b>Description:</b> The
+        <code>git diff &lt;branch-name&gt;</code> command shows the differences
+        between your current branch and another branch.
+      </p>
+      <p><b>Usage:</b></p>
+      <pre><code>git diff main</code></pre>
+      <p>
+        This compares the current branch (let's say feature1) with
+        <code>main</code> and displays differences in tracked files.
+      </p>
+    </section>
+
+    <section>
       <h2>Fetching and Merging Changes from Main</h2>
 
       <p>
@@ -458,29 +475,39 @@ Feature-Branch
 
       <h3>3️⃣ git pull origin main</h3>
       <p>
-        <b>Description:</b> A shortcut that does both <code>fetch</code> + <code>merge</code> in one step.
+        <b>Description:</b> A shortcut that does both <code>fetch</code> +
+        <code>merge</code> in one step.
       </p>
       <p><b>Usage:</b></p>
       <pre><code>git pull origin main</code></pre>
       <p>
-        This command automatically downloads the latest changes and merges them into your current branch.
+        This command automatically downloads the latest changes and merges them
+        into your current branch.
       </p>
       <p><b>When to use it?</b></p>
       <ul>
-        <li>Use <code>git pull</code> when you're sure you want to merge the latest changes immediately.</li>
-        <li>If you want more control, use <code>git fetch</code> followed by <code>git merge</code>.</li>
+        <li>
+          Use <code>git pull</code> when you're sure you want to merge the
+          latest changes immediately.
+        </li>
+        <li>
+          If you want more control, use <code>git fetch</code> followed by
+          <code>git merge</code>.
+        </li>
       </ul>
-    
+
       <h3>4️⃣ git rebase main</h3>
       <p>
-        <b>Description:</b> Instead of merging, rebasing applies your branch's changes on top of the latest <code>main</code>.
+        <b>Description:</b> Instead of merging, rebasing applies your branch's
+        changes on top of the latest <code>main</code>.
       </p>
       <p><b>Usage:</b></p>
       <pre><code>git rebase main</code></pre>
       <p>
-        This creates a cleaner history by avoiding unnecessary merge commits. If there are conflicts, Git will pause and let you resolve them one by one.
+        This creates a cleaner history by avoiding unnecessary merge commits. If
+        there are conflicts, Git will pause and let you resolve them one by one.
       </p>
-    
+
       <h3>🔹 Summary of Fetch, Merge, Pull, and Rebase</h3>
       <table border="1" cellpadding="10">
         <tr>
@@ -489,7 +516,10 @@ Feature-Branch
         </tr>
         <tr>
           <td><code>git fetch origin main</code></td>
-          <td>Downloads the latest changes from remote <code>main</code> but does not merge them.</td>
+          <td>
+            Downloads the latest changes from remote <code>main</code> but does
+            not merge them.
+          </td>
         </tr>
         <tr>
           <td><code>git merge main</code></td>
@@ -501,26 +531,149 @@ Feature-Branch
         </tr>
         <tr>
           <td><code>git rebase main</code></td>
-          <td>Applies your changes on top of the latest <code>main</code>, keeping history cleaner.</td>
+          <td>
+            Applies your changes on top of the latest <code>main</code>, keeping
+            history cleaner.
+          </td>
         </tr>
       </table>
-    
+
       <h3>🔹 When to Use Each Command?</h3>
       <ul>
-        <li>Use <code>git fetch</code> when you want to review changes before merging.</li>
-        <li>Use <code>git merge</code> when you want to bring <code>main</code>'s changes into your branch.</li>
-        <li>Use <code>git pull</code> when you need to fetch + merge quickly.</li>
-        <li>Use <code>git rebase</code> when you want a clean commit history.</li>
+        <li>
+          Use <code>git fetch</code> when you want to review changes before
+          merging.
+        </li>
+        <li>
+          Use <code>git merge</code> when you want to bring <code>main</code>'s
+          changes into your branch.
+        </li>
+        <li>
+          Use <code>git pull</code> when you need to fetch + merge quickly.
+        </li>
+        <li>
+          Use <code>git rebase</code> when you want a clean commit history.
+        </li>
       </ul>
-    
+
       <p>
-        <b>Final Thoughts:</b> <br>
-        ✅ <code>git fetch</code> lets you review changes before merging. <br>
-        ✅ <code>git merge</code> integrates changes while preserving commit history. <br>
-        ✅ <code>git pull</code> is a faster way to fetch and merge together. <br>
-        ✅ <code>git rebase</code> keeps history linear and avoids extra merge commits.
+        <b>Final Thoughts:</b> <br />
+        ✅ <code>git fetch</code> lets you review changes before merging. <br />
+        ✅ <code>git merge</code> integrates changes while preserving commit
+        history. <br />
+        ✅ <code>git pull</code> is a faster way to fetch and merge together.
+        <br />
+        ✅ <code>git rebase</code> keeps history linear and avoids extra merge
+        commits.
       </p>
-      
     </section>
+
+    <section>
+      <h2>📌 Pull Request (PR) in GitHub</h2>
+
+      <p>
+        <b>Description:</b> A Pull Request (PR) is used to merge changes from a
+        feature branch into the main branch after review. It is commonly used
+        when multiple developers work on different features and want to
+        integrate them safely.
+      </p>
+
+      <h3>1️⃣ Pushing a Feature Branch to Remote</h3>
+      <p>
+        Before creating a pull request, ensure your changes are pushed to
+        GitHub.
+      </p>
+      <p><b>Usage:</b></p>
+      <pre><code>git push origin feature1</code></pre>
+      <p>
+        This command pushes your local <code>feature1</code> branch to GitHub,
+        making it available for review and merging.
+      </p>
+      <p>After pushing, GitHub may indicate:</p>
+      <blockquote>"This branch is X commits ahead of main."</blockquote>
+      <p>
+        This means your branch has changes that are not yet merged into
+        <code>main</code>. You will also see a <b>"Contribute"</b> button, which
+        provides options like:
+      </p>
+      <ul>
+        <li>
+          <b>"Compare & pull request"</b> → Create a pull request for merging.
+        </li>
+        <li><b>"Sync changes"</b> (if applicable).</li>
+      </ul>
+
+      <h3>2️⃣ Creating a Pull Request on GitHub</h3>
+      <p>After pushing your branch, follow these steps to create a PR:</p>
+      <ul>
+        <li>Go to your repository on GitHub.</li>
+        <li>
+          Click on the <b>"Compare & pull request"</b> button next to your
+          branch.
+        </li>
+        <li>Review the changes and add a meaningful title and description.</li>
+        <li>Click <b>"Create Pull Request"</b> to submit it for review.</li>
+      </ul>
+
+      <h3>3️⃣ Reviewing and Merging the Pull Request</h3>
+      <p>
+        - Once the PR is created, other team members or maintainers can review
+        the changes. <br />
+        - If needed, they may request modifications before merging. <br />
+        - Once approved, click <b>"Merge Pull Request"</b> to merge the feature
+        branch into the main branch.
+      </p>
+
+      <h3>4️⃣ Checking Status Locally</h3>
+      <p>You can check if your branch is ahead of <code>main</code> using:</p>
+      <pre><code>git status</code></pre>
+
+      <h3>5️⃣ Deleting the Merged Branch</h3>
+      <p>
+        After merging, the feature branch is no longer needed and can be
+        deleted:
+      </p>
+      <pre><code>git branch -d feature1</code></pre>
+
+      <h3>6️⃣ Updating the Local Repository</h3>
+      <p>
+        If you were working on a feature branch, switch back to the main branch
+        and update it:
+      </p>
+      <code>git checkout main </code> <br />
+      <code> git pull origin main </code>
+    </section>
+
+    <section>
+        <h2>🔄 Deleting Remote Branches & Refreshing Remote Tracking</h2>
+        
+        <h3>🚀 Deleting a Local Branch</h3>
+        <p><b>Description:</b> Deletes a branch from your local machine.</p>
+        <p><b>Usage:</b></p>
+        <pre><code>git branch -d feature3</code></pre>
+        <p>If the branch has unmerged changes, force delete with:</p>
+        <pre><code>git branch -D feature3</code></pre>
+      
+        <h3>🌍 Deleting a Remote Branch</h3>
+        <p><b>Description:</b> Removes a branch from the remote repository.</p>
+        <p><b>Usage:</b></p>
+        <pre><code>git push origin --delete feature3</code></pre>
+      
+        <h3>❓ Why Does <code>remotes/origin/feature3</code> Still Show Up?</h3>
+        <p>Even after deleting the remote branch, Git may still show it in the remote-tracking list when you run:</p>
+        <pre><code>git branch -a</code></pre>
+        <p>This happens because Git caches remote branches locally.</p>
+      
+        <h3>🔄 Refreshing Remote Branch List</h3>
+        <p><b>Description:</b> Updates the remote-tracking branches and removes stale branches.</p>
+        <p><b>Usage:</b></p>
+        <pre><code>git fetch -p</code></pre>
+        <p>The <code>-p</code> or <code>--prune</code> option removes references to branches that no longer exist on the remote.</p>
+      
+        <h3>✅ Final Check</h3>
+        <p>After pruning, run the following to verify that <code>remotes/origin/feature3</code> is gone:</p>
+        <pre><code>git branch -a</code></pre>
+      </section>
+      
   </body>
 </html>
