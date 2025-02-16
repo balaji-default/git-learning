@@ -645,35 +645,139 @@ Feature-Branch
     </section>
 
     <section>
-        <h2>🔄 Deleting Remote Branches & Refreshing Remote Tracking</h2>
-        
-        <h3>🚀 Deleting a Local Branch</h3>
-        <p><b>Description:</b> Deletes a branch from your local machine.</p>
-        <p><b>Usage:</b></p>
-        <pre><code>git branch -d feature3</code></pre>
-        <p>If the branch has unmerged changes, force delete with:</p>
-        <pre><code>git branch -D feature3</code></pre>
+      <h2>⚠️ Why Direct Pushes to Main Are Dangerous?</h2>
+
+      <p>
+        Directly pushing code to the <code>main</code> branch is risky,
+        especially in a collaborative environment. It can lead to conflicts,
+        overwritten changes, and unreviewed code being merged into production.
+      </p>
+
+      <h3>🚨 Issues with Direct Pushes to Main</h3>
+      <ul>
+        <li>
+          <b>Overwriting Important Changes:</b> Someone else may have pushed
+          updates, and your direct push may overwrite their work.
+        </li>
+        <li>
+          <b>No Code Review:</b> If changes are pushed directly, there’s no
+          opportunity for other team members to review and suggest improvements.
+        </li>
+        <li>
+          <b>Merge Conflicts:</b> Without a structured workflow, conflicts may
+          arise when multiple people push different versions of the same file.
+        </li>
+        <li>
+          <b>Potential for Bugs in Production:</b> Unverified changes may
+          introduce bugs that affect the stability of the main codebase.
+        </li>
+      </ul>
+
+      <h3>✅ Best Practices to Avoid Direct Pushes</h3>
+      <p>
+        Instead of pushing directly to <code>main</code>, follow a structured
+        workflow:
+      </p>
+      <ol>
+        <li>
+          <b>Use Feature Branches:</b> Always create a separate branch for new
+          changes.
+        </li>
+        <li>
+          <b>Create a Pull Request (PR):</b> Request a review before merging
+          into <code>main</code>.
+        </li>
+        <li>
+          <b>Enable Branch Protection Rules:</b> GitHub allows you to restrict
+          direct pushes to <code>main</code>.
+        </li>
+        <li>
+          <b>Keep Main Updated:</b> Regularly fetch and merge the latest changes
+          from <code>main</code> before working.
+        </li>
+      </ol>
+
+      <h3>🔐 Restricting Direct Pushes to Main</h3>
+      <p>
+        You can set branch protection rules in GitHub to enforce best practices:
+      </p>
+      <ul>
+        <li>Go to your GitHub repository.</li>
+        <li>Navigate to <b>Settings → Branches</b>.</li>
+        <li>Under <b>Branch protection rules</b>, select <code>main</code>.</li>
+        <li>Enable <b>"Require pull request reviews before merging"</b>.</li>
+        <li>
+          Optionally, enable
+          <b>"Require status checks to pass before merging"</b> to enforce
+          automated tests.
+        </li>
+      </ul>
+
+      <h3>🔄 Recommended Workflow</h3>
+      <p>Follow this Git workflow to safely push changes:</p>
+      <pre><code>
+        # Step 1: Create and switch to a feature branch
+        git checkout -b feature-branch
       
-        <h3>🌍 Deleting a Remote Branch</h3>
-        <p><b>Description:</b> Removes a branch from the remote repository.</p>
-        <p><b>Usage:</b></p>
-        <pre><code>git push origin --delete feature3</code></pre>
+        # Step 2: Work on your changes, then add and commit
+        git add .
+        git commit -m "Added new feature"
       
-        <h3>❓ Why Does <code>remotes/origin/feature3</code> Still Show Up?</h3>
-        <p>Even after deleting the remote branch, Git may still show it in the remote-tracking list when you run:</p>
-        <pre><code>git branch -a</code></pre>
-        <p>This happens because Git caches remote branches locally.</p>
+        # Step 3: Push the branch to GitHub
+        git push origin feature-branch
       
-        <h3>🔄 Refreshing Remote Branch List</h3>
-        <p><b>Description:</b> Updates the remote-tracking branches and removes stale branches.</p>
-        <p><b>Usage:</b></p>
-        <pre><code>git fetch -p</code></pre>
-        <p>The <code>-p</code> or <code>--prune</code> option removes references to branches that no longer exist on the remote.</p>
+        # Step 4: Create a Pull Request and request a review
       
-        <h3>✅ Final Check</h3>
-        <p>After pruning, run the following to verify that <code>remotes/origin/feature3</code> is gone:</p>
-        <pre><code>git branch -a</code></pre>
-      </section>
-      
+        # Step 5: After approval, merge the PR into main
+        </code></pre>
+
+      <p>
+        Following these steps ensures a smooth and structured development
+        process while preventing issues in production.
+      </p>
+    </section>
+
+    <section>
+      <h2>🔄 Deleting Remote Branches & Refreshing Remote Tracking</h2>
+
+      <h3>🚀 Deleting a Local Branch</h3>
+      <p><b>Description:</b> Deletes a branch from your local machine.</p>
+      <p><b>Usage:</b></p>
+      <pre><code>git branch -d feature3</code></pre>
+      <p>If the branch has unmerged changes, force delete with:</p>
+      <pre><code>git branch -D feature3</code></pre>
+
+      <h3>🌍 Deleting a Remote Branch</h3>
+      <p><b>Description:</b> Removes a branch from the remote repository.</p>
+      <p><b>Usage:</b></p>
+      <pre><code>git push origin --delete feature3</code></pre>
+
+      <h3>❓ Why Does <code>remotes/origin/feature3</code> Still Show Up?</h3>
+      <p>
+        Even after deleting the remote branch, Git may still show it in the
+        remote-tracking list when you run:
+      </p>
+      <pre><code>git branch -a</code></pre>
+      <p>This happens because Git caches remote branches locally.</p>
+
+      <h3>🔄 Refreshing Remote Branch List</h3>
+      <p>
+        <b>Description:</b> Updates the remote-tracking branches and removes
+        stale branches.
+      </p>
+      <p><b>Usage:</b></p>
+      <pre><code>git fetch -p</code></pre>
+      <p>
+        The <code>-p</code> or <code>--prune</code> option removes references to
+        branches that no longer exist on the remote.
+      </p>
+
+      <h3>✅ Final Check</h3>
+      <p>
+        After pruning, run the following to verify that
+        <code>remotes/origin/feature3</code> is gone:
+      </p>
+      <pre><code>git branch -a</code></pre>
+    </section>
   </body>
 </html>
