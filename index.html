@@ -455,6 +455,83 @@ Feature-Branch
         ✅ This approach avoids unexpected conflicts when working with multiple
         team members.
       </p>
+
+
+      <h3>2️⃣ git merge main</h3>
+      <p>
+        <b>Description:</b> Merges the fetched updates from <code>main</code> into your current branch.
+      </p>
+      <p><b>Usage:</b></p>
+      <pre><code>git merge main</code></pre>
+      <p>
+        If there are no conflicts, the changes are merged automatically. If there are conflicts, Git will ask you to resolve them.
+      </p>
+    
+      <h3>3️⃣ git pull origin main</h3>
+      <p>
+        <b>Description:</b> A shortcut that does both <code>fetch</code> + <code>merge</code> in one step.
+      </p>
+      <p><b>Usage:</b></p>
+      <pre><code>git pull origin main</code></pre>
+      <p>
+        This command automatically downloads the latest changes and merges them into your current branch.
+      </p>
+      <p><b>When to use it?</b></p>
+      <ul>
+        <li>Use <code>git pull</code> when you're sure you want to merge the latest changes immediately.</li>
+        <li>If you want more control, use <code>git fetch</code> followed by <code>git merge</code>.</li>
+      </ul>
+    
+      <h3>4️⃣ git rebase main</h3>
+      <p>
+        <b>Description:</b> Instead of merging, rebasing applies your branch's changes on top of the latest <code>main</code>.
+      </p>
+      <p><b>Usage:</b></p>
+      <pre><code>git rebase main</code></pre>
+      <p>
+        This creates a cleaner history by avoiding unnecessary merge commits. If there are conflicts, Git will pause and let you resolve them one by one.
+      </p>
+    
+      <h3>🔹 Summary of Fetch, Merge, Pull, and Rebase</h3>
+      <table border="1" cellpadding="10">
+        <tr>
+          <th>Command</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          <td><code>git fetch origin main</code></td>
+          <td>Downloads the latest changes from remote <code>main</code> but does not merge them.</td>
+        </tr>
+        <tr>
+          <td><code>git merge main</code></td>
+          <td>Merges the fetched changes into your current branch.</td>
+        </tr>
+        <tr>
+          <td><code>git pull origin main</code></td>
+          <td>Fetches and merges in one step.</td>
+        </tr>
+        <tr>
+          <td><code>git rebase main</code></td>
+          <td>Applies your changes on top of the latest <code>main</code>, keeping history cleaner.</td>
+        </tr>
+      </table>
+    
+      <h3>🔹 When to Use Each Command?</h3>
+      <ul>
+        <li>Use <code>git fetch</code> when you want to review changes before merging.</li>
+        <li>Use <code>git merge</code> when you want to bring <code>main</code>'s changes into your branch.</li>
+        <li>Use <code>git pull</code> when you need to fetch + merge quickly.</li>
+        <li>Use <code>git rebase</code> when you want a clean commit history.</li>
+      </ul>
+    
+      <p>
+        <b>Final Thoughts:</b> <br>
+        ✅ <code>git fetch</code> lets you review changes before merging. <br>
+        ✅ <code>git merge</code> integrates changes while preserving commit history. <br>
+        ✅ <code>git pull</code> is a faster way to fetch and merge together. <br>
+        ✅ <code>git rebase</code> keeps history linear and avoids extra merge commits.
+      </p>
+      
     </section>
   </body>
 </html>
