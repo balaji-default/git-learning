@@ -36,6 +36,44 @@
         <p><code>git config --local --list</code> - Lists the local username and email settings</p>
     </section>
 
+
+    <section>
+        <h2>🚀 Basic Git Workflow for a New Repository</h2>
+      
+        <h3>1️⃣ Check if Git is Installed</h3>
+        <p><b>Description:</b> Verifies if Git is installed on your system.</p>
+        <pre><code>git --version</code></pre>
+      
+        <h3>2️⃣ Initialize a New Git Repository</h3>
+        <p><b>Description:</b> Creates a new Git repository in the local directory.</p>
+        <pre><code>git init</code></pre>
+      
+        <h3>3️⃣ Stage All Files</h3>
+        <p><b>Description:</b> Adds all modified and new files to the staging area.</p>
+        <pre><code>git add .</code></pre>
+      
+        <h3>4️⃣ Commit Changes</h3>
+        <p><b>Description:</b> Saves the staged changes to the local repository.</p>
+        <pre><code>git commit -m "Initial commit"</code></pre>
+      
+        <h3>5️⃣ Create a Remote Repository</h3>
+        <p><b>Step:</b> Before proceeding, create a new repository on GitHub.</p>
+      
+        <h3>6️⃣ Link Local Repo to Remote</h3>
+        <p><b>Description:</b> Connects the local repository to the remote repository.</p>
+        <pre><code>git remote add origin &lt;repo-link&gt;</code></pre>
+      
+        <h3>7️⃣ Rename Default Branch</h3>
+        <p><b>Description:</b> Changes the default branch from <code>master</code> to <code>main</code>.</p>
+        <pre><code>git branch -M main</code></pre>
+      
+        <h3>8️⃣ Push to Remote Repository</h3>
+        <p><b>Description:</b> Pushes the local changes to the remote repository and sets the upstream.</p>
+        <pre><code>git push -u origin main</code></pre>
+      
+      </section>
+      
+
     <section>
         <h2>Git Clone Command</h2>
         <p><code>git clone &lt;repo-link&gt;</code></p>
@@ -112,6 +150,86 @@ Feature-Branch
             <li><b>C</b> → Committed (Saved in the repository)</li>
         </ul>
     </section>
-
+    <section>
+        <h2>git init</h2>
+        <p><b>Description:</b> Initializes a new Git repository in the local directory.</p>
+        <p><b>Usage:</b></p>
+        <pre><code>git init</code></pre>
+        <p>This creates a <code>.git</code> folder, making the directory a Git repository.</p>
+    </section>
+    
+    <section>
+        <h2>git remote add origin &lt;repo-link&gt;</h2>
+        <p><b>Description:</b> Links your local repository to a remote repository.</p>
+        <p><b>Usage:</b></p>
+        <pre><code>git remote add origin https://github.com/username/repo.git</code></pre>
+        <p>Now, <code>origin</code> is the alias for your remote repository.</p>
+    </section>
+    
+    <section>
+        <h2>git remote -v</h2>
+        <p><b>Description:</b> Displays the remote repositories linked to your local repo.</p>
+        <p><b>Usage:</b></p>
+        <pre><code>git remote -v</code></pre>
+        <p><b>Example output:</b></p>
+        <code>origin https://github.com/username/repo.git (fetch)<br /></code>
+        <code> origin https://github.com/username/repo.git (push)</code>
+    </section>
+    
+    <section>
+        <h2>git branch</h2>
+        <p><b>Description:</b> Lists all local branches.</p>
+        <p><b>Usage:</b></p>
+        <pre><code>git branch</code></pre>
+        <p><b>Example output:</b></p>
+        <pre><code>* main
+    feature-branch</code></pre>
+        <p>The <code>*</code> indicates the currently active branch.</p>
+    
+        <h3>git branch -M &lt;new-name&gt; vs. git branch -m &lt;new-name&gt;</h3>
+        <ul>
+            <li><code>git branch -M main</code> → <b>Forces</b> renaming the branch to <code>main</code>, even if the new name already exists.</li>
+            <li><code>git branch -m main</code> → Renames the branch to <code>main</code> <b>only if there is no conflict</b>.</li>
+        </ul>
+    </section>
+    
+    <section>
+        <h2>git branch -a</h2>
+        <p><b>Description:</b> Lists both <b>local and remote</b> branches.</p>
+        <p><b>Usage:</b></p>
+        <pre><code>git branch -a</code></pre>
+        <p><b>Example output:</b></p>
+        <pre><code>* main
+    feature-branch 
+    remotes/origin/main 
+    remotes/origin/feature-branch</code></pre>
+    </section>
+    
+    <section>
+        <h2>git branch -M main</h2>
+        <p><b>Description:</b> Renames the current branch to <code>main</code>.</p>
+        <p><b>Usage:</b></p>
+        <pre><code>git branch -M main</code></pre>
+        <p>This is commonly used to rename <code>master</code> to <code>main</code>.</p>
+    </section>
+    
+    <section>
+        <h2>git push origin main</h2>
+        <p><b>Description:</b> Pushes the <code>main</code> branch to the remote repository.</p>
+        <p><b>Usage:</b></p>
+        <pre><code>git push origin main</code></pre>
+        <p>This updates the remote repository with the latest commits from <code>main</code>.</p>
+    </section>
+    
+    <section>
+        <h2>git push -u origin main</h2>
+        <p><b>Description:</b> Pushes <code>main</code> to the remote and sets it as the <b>upstream branch</b>.</p>
+        <p><b>Usage:</b></p>
+        <pre><code>git push -u origin main</code></pre>
+        <p>After this, you can just use:</p>
+        <pre><code>git push</code></pre>
+        <p>instead of specifying <code>origin main</code> every time.</p>
+    </section>
+    
 </body>
 </html>
