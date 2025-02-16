@@ -17,122 +17,181 @@ This guide provides a comprehensive overview of essential Git commands and workf
 
 ## 1. Git Configuration
 
+### Set global username
 ```bash
 git config --global user.name "Your GitHub Username"
 ```
+
+### Set global email
 ```bash
 git config --global user.email "your-email@example.com"
 ```
+
+### View global username
 ```bash
-git config --global user.name  # View global username
+git config --global user.name
 ```
+
+### View global email
 ```bash
-git config --global user.email  # View global email
+git config --global user.email
 ```
+
+### List global configurations
 ```bash
-git config --global --list  # List global configs
+git config --global --list
 ```
+
+### Set local username
 ```bash
 git config user.name "Local Username"
 ```
+
+### Set local email
 ```bash
 git config user.email "local-email@example.com"
 ```
+
+### List local configurations
 ```bash
-git config --local --list  # List local configs
+git config --local --list
 ```
 
 ## 2. Basic Workflow
 
+### Check Git version
 ```bash
-git --version  # Check Git version
+git --version
 ```
+
+### Initialize a new repository
 ```bash
-git init  # Initialize repo
+git init
 ```
+
+### Stage all files for commit
 ```bash
-git add .  # Stage all files
+git add .
 ```
+
+### Commit staged changes
 ```bash
-git commit -m "Initial commit"  # Commit changes
+git commit -m "Initial commit"
 ```
+
+### Link repository to a remote origin
 ```bash
-git remote add origin https://github.com/your-username/repo.git  # Link to remote
+git remote add origin https://github.com/your-username/repo.git
 ```
+
+### Rename branch to main
 ```bash
-git branch -M main  # Rename branch to main
+git branch -M main
 ```
+
+### Push changes to remote repository
 ```bash
-git push -u origin main  # Push to remote
+git push -u origin main
 ```
 
 ## 3. Cloning Repositories
 
+### Clone an existing repository
 ```bash
-git clone https://github.com/your-username/repo.git  # Clone a repo
+git clone https://github.com/your-username/repo.git
 ```
+
+### View hidden files (Linux/macOS)
 ```bash
-ls -a  # View hidden files (Linux/macOS)
+ls -a
 ```
+
+### View hidden files (Windows)
 ```bash
-Get-ChildItem -Force  # View hidden files (Windows)
+Get-ChildItem -Force
 ```
 
 ## 4. Branch Management
 
+### List all branches
 ```bash
-git branch  # List branches
+git branch
 ```
+
+### Create a new branch
 ```bash
-git branch feature1  # Create branch
+git branch feature1
 ```
+
+### Switch to an existing branch
 ```bash
-git checkout feature1  # Switch to branch
+git checkout feature1
 ```
+
+### Create and switch to a new branch (legacy)
 ```bash
-git checkout -b feature2  # Create + switch (legacy)
+git checkout -b feature2
 ```
+
+### Create and switch to a new branch (modern)
 ```bash
-git switch -c feature3  # Create + switch (modern)
+git switch -c feature3
 ```
 
 ## 5. Merging & Syncing
 
+### Compare changes with main branch
 ```bash
-git diff main  # Compare changes with main
+git diff main
 ```
+
+### Fetch updates from the remote repository
 ```bash
-git fetch origin main  # Fetch updates
+git fetch origin main
 ```
+
+### Merge changes from main branch
 ```bash
-git merge main  # Merge changes
+git merge main
 ```
+
+### Pull updates from remote repository
 ```bash
-git pull origin main  # Pull updates
+git pull origin main
 ```
+
+### Rebase branch onto main
 ```bash
-git rebase main  # Rebase onto main
+git rebase main
 ```
 
 ## 6. Remote Operations
 
+### Push feature branch to remote repository
 ```bash
-git push origin feature1  # Push feature branch
+git push origin feature1
 ```
+
+### Delete a remote branch
 ```bash
-git push origin --delete feature1  # Delete remote branch
+git push origin --delete feature1
 ```
 
 ## 7. Cleanup & Maintenance
 
+### Delete a local branch
 ```bash
-git branch -d feature1  # Delete local branch
+git branch -d feature1
 ```
+
+### Force delete a branch
 ```bash
-git branch -D feature3  # Force-delete branch
+git branch -D feature3
 ```
+
+### Prune stale branches from remote tracking
 ```bash
-git fetch -p  # Prune stale branches
+git fetch -p
 ```
 
 ## 8. Best Practices
