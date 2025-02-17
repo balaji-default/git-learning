@@ -13,7 +13,7 @@ Git is a distributed version control system that helps developers track changes 
 5. **Merging & Syncing**
 6. **Remote Operations**
 7. **Cleanup & Maintenance**
-8. **Best Practices**
+8. **Try not to push directly into main branch(Best Practice)**
 
 ---
 
