@@ -19,7 +19,6 @@ Git is a distributed version control system that helps developers track changes 
 
 ## 1. **Git Configuration**
 
----
 
 ### Set global username
 
@@ -73,7 +72,6 @@ git config --local --list
 
 ## 2. **Basic Workflow**
 
----
 
 ### Check Git version
 
@@ -121,7 +119,6 @@ git push -u origin main
 
 ## 3. **Cloning Repositories**
 
----
 
 ### Clone an existing repository
 
@@ -145,7 +142,6 @@ Get-ChildItem -Force
 
 ## 4. **Branch Management**
 
----
 
 ### List all branches
 
@@ -181,7 +177,6 @@ git switch -c feature3
 
 ## 5. **Merging & Syncing**
 
----
 
 ### Compare changes with main branch
 
@@ -217,7 +212,6 @@ git rebase main
 
 ## 6. **Remote Operations**
 
----
 
 ### Push feature branch to remote repository
 
@@ -235,7 +229,6 @@ git push origin --delete feature1
 
 ## 7. **Cleanup & Maintenance**
 
----
 
 ### Delete a local branch
 
@@ -265,7 +258,6 @@ git branch -a
 
 ## 8. **Best Practices**
 
----
 
 - Always use feature branches.
 - Create Pull Requests (PRs) on GitHub.
