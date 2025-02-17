@@ -782,5 +782,48 @@ Feature-Branch
       </p>
       <pre><code>git branch -a</code></pre>
     </section>
+
+    <section>
+      <h2>⏪ Undoing Changes in Git</h2>
+
+      <h3>1️⃣ Unstaging a File (Undo `git add`)</h3>
+      <p>
+        <b>Description:</b> Removes a file from the staging area without
+        deleting changes.
+      </p>
+      <p><b>Usage:</b></p>
+      <pre><code>git reset myfile.txt</code></pre>
+      <p>
+        Example: Suppose you accidentally staged <code>index.html</code>, but
+        don’t want to commit it yet:
+      </p>
+      <pre><code>
+    git add index.html
+    git reset index.html
+      </code></pre>
+      <p>Now, <code>index.html</code> is unstaged but the changes remain.</p>
+
+      <h3>2️⃣ Unstage All Files</h3>
+      <p><b>Description:</b> Unstages all staged changes.</p>
+      <p><b>Usage:</b></p>
+      <pre><code>git reset</code></pre>
+
+      <h3>3️⃣ Undo the Last Commit (Soft Reset)</h3>
+      <p>
+        <b>Description:</b> Moves the last commit back to the staging area,
+        keeping the changes.
+      </p>
+      <p><b>Usage:</b></p>
+      <pre><code>git reset HEAD~1</code></pre>
+      <p>
+        Example: Suppose you committed a change but realized you need to edit
+        it:
+      </p>
+      <pre><code>
+    git commit -m "Wrong commit"
+    git reset HEAD~1
+      </code></pre>
+      <p>Now, your changes are unstaged but still available for editing.</p>
+    </section>
   </body>
 </html>
