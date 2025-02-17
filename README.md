@@ -4,7 +4,7 @@ Git is a distributed version control system that helps developers track changes 
 
 ## **Table of Contents**
 
---- **Table of Contents** ---
+**Table of Contents**
 
 1. **Git Configuration**
 2. **Basic Workflow**
