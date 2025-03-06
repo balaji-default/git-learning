@@ -23,7 +23,7 @@ Git is a distributed version control system that helps developers track changes 
 ### Live Demo
 
 You can check out the live version of the deployed site here:  
-[Git Learning Deployment Live Demo]   (https://balajis183.github.io/git-learning/)
+ Deploy -  [Git Learning Deployment Live Demo](https://balajis183.github.io/git-learning/)
 
  If the link doesn't work you can copy the below link in the browser
 ```bash
