@@ -16,7 +16,19 @@ Git is a distributed version control system that helps developers track changes 
 8. **Try not to push directly into main branch(Best Practice)**
 
 ---
+# Git Learning - Deployment Section
 
+## Deployment
+
+### Live Demo
+
+You can check out the live version of the deployed site here:  
+[Git Learning Deployment Live Demo](https://balajis183.github.io/git-learning/)
+
+ If the link doesn't work you can copy the below link in the browser
+```bash
+https://balajis183.github.io/git-learning/
+```
 ## 1. **Git Configuration**
 
 
